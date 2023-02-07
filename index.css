@@ -69,8 +69,12 @@ li a{
     font-size: 17px;
     padding-left: 70px;
 }
+.ancla{
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+}
 .footer{
-    padding-top: 135px;
     display: grid;
     grid-template-columns: 20px 155px;
     column-gap: 10px;

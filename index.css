@@ -1,4 +1,6 @@
-/* Etiquetas Generales */
+/* ----------------------*/
+/*             Etiquetas */
+/* ----------------------*/
 body{
     margin: 0;
     padding: 0 10px 0 10px;
@@ -17,7 +19,35 @@ li a{
     color: gray;
 }
 
-/* Clases */
+/* ----------------------*/
+/*                Clases */
+/* ----------------------*/
+
+/* Boton que desplega el indice */
+.index-boton{
+    display: flex;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 10px;
+    top: 15px;
+    display: none;
+}
+.index-boton a{
+    padding: 5px;
+}
+
+/* Indice */
+.index{
+    font-size: 12px;
+    height: 100%;
+    width: 175px;
+    position: fixed;
+    background: white;
+    border-right: 1px solid gray;
+    padding-right: 10px;
+    z-index: 10;
+    transition: ease-in-out 1s;
+}
 .main{
     padding: 0;
     color: black;
@@ -25,50 +55,7 @@ li a{
 .submain{
     padding-left: 20px;
 }
-.index{
-    font-size: 12px;
-    height: 100%;
-    width: 175px;
-    position: fixed;
-    background-color: white;
-    border-right: 1px solid gray;
-    padding-right: 10px;
-}
-.content{
-    margin-left: 190px;
-}
-.header{
-    display: grid;
-    grid-template-columns: 80% 20%;
-    border-bottom: 2px solid black;
-}
-.header img{
-    width: 150px;
-}
-.header h1{
-    padding: 0 50px;
-}
-.subtitle{
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-}
-.text{
-    padding: 0 50px 20px 50px;
-    letter-spacing: 1px;
-}
-.listOflists{
-    padding: 0 50px 20px 50px;
-}
-.listOflists h3,
-.listOflists p{
-    padding-left: 50px;
-    color: rgb(75, 73, 73);
-}
-.listOflists h3{
-    font-size: 17px;
-    padding-left: 70px;
-}
+/* Footer del indice */
 .ancla{
     display: flex;
     position: absolute;
@@ -96,6 +83,47 @@ li a{
     display: flex;
     grid-column: span 2;
 }
+
+/* Contenido */
+.content{
+    margin-left: 190px;
+}
+/* Encabezado del contenido */
+.header{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    border-bottom: 2px solid black;
+}
+.header img{
+    width: 150px;
+}
+.header h1{
+    padding: 0 50px;
+}
+/* subtitulo y texto de cada seccion */
+.subtitle{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+.text{
+    padding: 0 50px 20px 50px;
+    letter-spacing: 1px;
+}
+/* listas de secciones */
+.listOflists{
+    padding: 0 50px 20px 50px;
+}
+.listOflists h3,
+.listOflists p{
+    padding-left: 50px;
+    color: rgb(75, 73, 73);
+}
+.listOflists h3{
+    font-size: 17px;
+    padding-left: 70px;
+}
+/* Seccion de Tecnologias */
 .depExt{
     padding-left: 100px;
 }
@@ -126,7 +154,10 @@ h3.sub{
     color: black;
 }
 
-/* Efectos */
+
+/* ----------------------*/
+/*               Efectos */
+/* ----------------------*/
 li a:hover{
     text-decoration: underline;
     font-size: 13px;
@@ -137,4 +168,102 @@ li a:hover{
 .boton:hover{
     scale: 1.01;
     box-shadow: 5px 5px 5px 5px #888888;
+}
+
+/* ----------------------*/
+/*            Responsive */
+/* ----------------------*/
+@media only screen and (max-width: 1000px){
+    /* ----------------------*/
+    /*             Etiquetas */
+    /* ----------------------*/
+    body{
+        font-size: 10px;
+    }
+
+    /* ----------------------*/
+    /*                Clases */
+    /* ----------------------*/
+    /* Boton Del Indice */
+    .index-boton{
+        display: flex;
+        z-index: 15;
+        position: fixed;
+        background: lightcoral;
+    }
+
+    /* Indice */ 
+    .index{
+        top: 0;
+        transform: translateX(-200px);
+    }
+    .index .main{
+        padding-top: 30px;
+    }
+    .boton{
+        height: 40px;
+        width: 100px;
+    }
+
+    /* contenido */
+    .content{
+        margin: 0;
+    }
+    /* head del contenido */
+    .header{
+        display: block;
+    }
+    .header img{
+        display: flex;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 80px;
+    }
+    .header h1{
+        display: flex;
+        justify-content: center;
+    }
+    /* Tecnologias */
+    .tecno{
+        grid-template-columns: repeat(3,110px);
+        padding: 0;
+        column-gap: 5px;
+    }
+    .depExt{
+        padding-left: 30px;
+    }
+    /* titulo de la seccion y texto */
+    .text{
+        padding: 0;
+    }
+    .subtitle{
+        font-size: 15px;
+    }
+    /* lista de secciones */
+    .listOflists{
+        padding: 0;
+        padding-right: 20px;
+    }
+    .listOflists h3{
+        padding-left: 30px;
+        font-size: 12px;
+    }
+    .listOflists p{
+        padding-left: 25px;
+    }
+    
+    /* ----------------------*/
+    /*      Agregadas con JS */
+    /* ----------------------*/
+    .visible{
+        transform: translateX(0px);
+        transition: ease-in-out 1s;
+    }
+    .fixeado{
+        position: fixed;
+    }
+    .opacidad{
+       opacity: 0.3;
+    }
 }
